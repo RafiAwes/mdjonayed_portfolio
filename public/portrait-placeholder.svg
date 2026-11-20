@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1000" width="1200" height="1000">
+  <!-- Placeholder: save the real photo as public/portrait.jpg and set site.portrait = "/portrait.jpg" -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a222c"/>
+      <stop offset="1" stop-color="#0d1117"/>
+    </linearGradient>
+    <radialGradient id="rim" cx="0.62" cy="0.3" r="0.55">
+      <stop offset="0" stop-color="#9be1c3" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#9be1c3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3440"/>
+      <stop offset="1" stop-color="#151b23"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1000" fill="url(#bg)"/>
+  <rect width="1200" height="1000" fill="url(#rim)"/>
+  <g fill="url(#fig)">
+    <ellipse cx="720" cy="330" rx="125" ry="150"/>
+    <path d="M430 1000c10-230 140-410 290-410s280 180 290 410z"/>
+  </g>
+  <text x="1160" y="960" text-anchor="end" font-family="ui-monospace, monospace" font-size="20" fill="#5f6870" letter-spacing="1.5">replace with public/portrait.jpg</text>
+</svg>

@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens — "graphite & green": modern business with a quiet technical edge.
+ * Dark graphite bands, cool paper ground, one business green for actions,
+ * mint only for small signals on dark. See DESIGN.md.
+ */
+@theme {
+  /* Dark */
+  --color-ink: #0d1117;
+  --color-ink-2: #151b23;
+  --color-ink-3: #232b36;
+  --color-on-ink: #eef1ee;
+  --color-on-ink-soft: #9aa4ae;
+
+  /* Light */
+  --color-paper: #f3f4f0;
+  --color-card: #ffffff;
+  --color-line: #e1e4dd;
+  --color-text: #11161c;
+  --color-text-soft: #454e57;
+  --color-text-mute: #5f6870;
+
+  /* Brand */
+  --color-primary: #1a6b50;
+  --color-primary-press: #145540;
+  --color-mint: #9be1c3;
+  --color-mint-soft: #e2f3ea;
+
+  /* Radius */
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  /* Type */
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-paper);
+  scrollbar-color: var(--color-text-mute) var(--color-paper);
+  caret-color: var(--color-primary);
+  text-underline-offset: 4px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-text-soft);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-mint);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-ink :focus-visible {
+  outline-color: var(--color-mint);
+}
+
+/* Display: tight modern sans. */
+@utility display {
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+/* Pill buttons, 44px tall. */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Faint measured grid — the hero's technical ground. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 70% at 30% 40%, #000 30%, transparent 85%);
+}
+
+@utility bg-grid-light {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 90% at 100% 0%, #000 20%, transparent 75%);
+}
+
+/* Lenis recommended styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.split-line-mask {
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
 }
