@@ -50,6 +50,52 @@ export const site = {
     { title: "Investor & founder", body: "Backing and building early-stage tech ventures." },
   ],
 
+  /**
+   * PLACEHOLDER philosophy — rewrite with the beliefs he actually repeats to founders.
+   * Ask him: "What do you tell every founder you coach?"
+   */
+  philosophy: {
+    heading: "How I think",
+    intro: "A few beliefs shape every coaching session, strategy plan and investment I make.",
+    principles: [
+      {
+        title: "Clarity beats hustle.",
+        body: "Most founders aren't short on effort; they're short on focus. We decide what not to do before deciding what to do.",
+      },
+      {
+        title: "Numbers tell the truth. People tell the story.",
+        body: "Every plan starts with the data and ends with the team who has to carry it out.",
+      },
+      {
+        title: "Build like an operator. Think like an investor.",
+        body: "Good decisions grow the business this quarter and its value for years.",
+      },
+      {
+        title: "Small systems, compounding results.",
+        body: "Weekly habits beat yearly resolutions. Growth is built in the routine, not the retreat.",
+      },
+    ],
+  },
+
+  /**
+   * PLACEHOLDER quotes — replace with his own lines from real talks, posts or interviews,
+   * and put the real source (event, post, interview) in `source`. Not famous people's quotes.
+   */
+  quotes: [
+    {
+      text: "A business doesn't need more ideas. It needs fewer, better decisions.",
+      source: "Source: talk, post or interview title",
+    },
+    {
+      text: "Growth is a system you build, not a moment you wait for.",
+      source: "Source: talk, post or interview title",
+    },
+    {
+      text: "Technology is a multiplier. Point it at the right problem first.",
+      source: "Source: talk, post or interview title",
+    },
+  ],
+
   /** Placeholder approach — rewrite in your own words. */
   approach: [
     {

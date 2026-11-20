@@ -51,3 +51,20 @@ export function Quote({ className = "size-5" }: IconProps) {
     </svg>
   );
 }
+
+export function Share({ className = "size-4" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M8 2.5v8M5 5.5l3-3 3 3" />
+      <path d="M3.5 8.5v4a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-4" />
+    </svg>
+  );
+}
+
+export function Check({ className = "size-4" }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="m3 8.5 3 3 7-7" />
+    </svg>
+  );
+}
